@@ -1,0 +1,23 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "build:client": "cd client && npm install --no-audit && npm run build",
+    "build": "npm run build:client && npm install --no-audit",
+    "start:prod": "npm run build && npm run start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "express": "^4.21.0",
+    "mongoose": "^8.6.2",
+    "puppeteer": "^23.3.0"
+  }
+}
