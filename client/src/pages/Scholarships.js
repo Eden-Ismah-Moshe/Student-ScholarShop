@@ -1,11 +1,13 @@
 // src/pages/Scholarships.js
 import React from "react";
+import "./Home.css";
+import logo from "./logo.png";
+import homePhoto from "./homepagePhoto.png";
 
 const Scholarships = () => {
   return (
     <div>
-      <h1>Student Scholarships</h1>
-      <p>Find scholarships that match your needs here.</p>
+      <h2>Scholarships</h2>
     </div>
   );
 };

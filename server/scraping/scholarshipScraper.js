@@ -1,6 +1,6 @@
 const puppeteer = require("puppeteer");
 
-async function scrapeScholarships() {
+async function scholarshipScraper() {
   const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
 
@@ -78,14 +78,14 @@ async function scrapeScholarships() {
   });
 
   await browser.close();
-  //console.log("SIZE OF nuisScholarships:", nuisScholarships.length);
-  //console.log("nuisScholarships:", nuisScholarships);
+  console.log("SIZE OF nuisScholarships:", nuisScholarships.length);
+  console.log("nuisScholarships:", nuisScholarships);
   console.log("SIZE OF milgapoScholarships:", milgapoScholarships.length);
   console.log("milgapoScholarships:", milgapoScholarships);
 
   return [...nuisScholarships, ...milgapoScholarships];
 }
 
-scrapeScholarships().catch(console.error);
+scholarshipScraper().catch(console.error);
 
 //module.exports = { scrapeScholarships };
