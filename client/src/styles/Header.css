@@ -1,0 +1,32 @@
+@import "./variables.css";
+
+.header {
+  display: flex;
+  justify-content: space-between; /* Space between logo and navigation */
+  align-items: center; /* Center vertically */
+  padding: 5px;
+  background-color: var(--headerColor);
+  color: var(--headerTextColor);
+}
+
+.header h2 {
+  margin-left: 20px;
+  flex: 1;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar ul li {
+  margin: 0 15px;
+}
+
+.navbar ul li a {
+  color: var(--linkColor);
+  text-decoration: none;
+  font-weight: bold;
+}

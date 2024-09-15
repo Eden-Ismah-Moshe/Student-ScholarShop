@@ -1,0 +1,56 @@
+@import "./variables.css";
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures the button stays at the bottom */
+  border: 1px solid var(--cardBorderColor);
+  padding: 20px;
+  margin: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-width: 320px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  font-size: 1.7rem;
+  margin-bottom: 5px;
+  margin-top: 1px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--titleColor);
+}
+
+.description {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  text-align: center;
+  color: var(--paragraphColor);
+}
+
+.link-container {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.link {
+  text-decoration: none; /* To get rid from the line under the link. */
+  background-color: var(--linkColor);
+  color: var(--linkTextColor);
+  padding: 15px 30px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.link:hover {
+  background-color: var(--buttonHoverColor);
+}

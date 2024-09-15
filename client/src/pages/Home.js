@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { FaGraduationCap } from "react-icons/fa6";
 import "../styles/Home.css";
+import Header from "../components/Header";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -16,20 +16,7 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <header className="header">
-        <FaGraduationCap size={50} />
-        <h2>Student ScholarShop</h2>
-        <nav className="navbar">
-          <ul>
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="/about">About Us</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <Header />
 
       <main
         className="main-content"
@@ -38,15 +25,19 @@ const Home = () => {
         <section className="intro-section">
           <h2>Welcome to Student ScholarShop</h2>
           <p>
-            Connecting students with opportunities through scholarships and
-            e-commerce product tracking.
+            {/*Connecting students with opportunities through scholarships and
+            e-commerce product tracking.*/}
+            חיבור סטודנטים להזדמנויות באמצעות מלגות ומעקב אחר מוצרי מסחר
+            אלקטרוני
           </p>
           <div className="button-container">
             <button className="feature-button" onClick={goToScholarships}>
-              Student Scholarships
+              {/*Student Scholarships*/}
+              מלגות סטודנטים
             </button>
             <button className="feature-button" onClick={goToEcommerce}>
-              E-commerce Product Scraping
+              {/* E-commerce Product Scraping*/}
+              מוצרי מסחר אלקטרוני
             </button>
           </div>
         </section>
