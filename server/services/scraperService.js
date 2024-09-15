@@ -5,6 +5,36 @@ async function scrapeScholarships() {
   const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
 
+  // Scrape from Milgapo
+  await page.goto("https://milgapo.co.il/?milga=bli-hitnadvut", {
+    waitUntil: "domcontentloaded",
+  });
+  const milgapoScholarships = await page.evaluate(() => {
+    const scholarships = [];
+    document.querySelectorAll("section.mbr-section").forEach((item) => {
+      const titleElement = item.querySelector("h3");
+      const descriptionElement = item.querySelector("p");
+      const linkElement = item.querySelector("a");
+
+      const cleanDescription = (description) =>
+        description
+          .replace(/•\s*/g, "")
+          .replace(/\n+/g, " ")
+          .replace(/<<|>>/g, "")
+          .trim();
+
+      scholarships.push({
+        title: titleElement ? titleElement.innerText : "No title available",
+        description: descriptionElement
+          ? cleanDescription(descriptionElement.innerText)
+          : "No description available",
+        link: linkElement ? linkElement.href : "No link available",
+        source: "Milgapo",
+      });
+    });
+    return scholarships.slice(1, -8);
+  });
+
   // Scrape from NUIS
   await page.goto(
     "https://www.nuis.co.il/scholarships/?jsf=jet-engine&tax=scholarship-status:36",
@@ -47,38 +77,8 @@ async function scrapeScholarships() {
     return scholarships;
   });
 
-  // Scrape from Milgapo
-  await page.goto("https://milgapo.co.il/?milga=bli-hitnadvut", {
-    waitUntil: "domcontentloaded",
-  });
-  const milgapoScholarships = await page.evaluate(() => {
-    const scholarships = [];
-    document.querySelectorAll("section.mbr-section").forEach((item) => {
-      const titleElement = item.querySelector("h3");
-      const descriptionElement = item.querySelector("p");
-      const linkElement = item.querySelector("a");
-
-      const cleanDescription = (description) =>
-        description
-          .replace(/•\s*/g, "")
-          .replace(/\n+/g, " ")
-          .replace(/<<|>>/g, "")
-          .trim();
-
-      scholarships.push({
-        title: titleElement ? titleElement.innerText : "No title available",
-        description: descriptionElement
-          ? cleanDescription(descriptionElement.innerText)
-          : "No description available",
-        link: linkElement ? linkElement.href : "No link available",
-        source: "Milgapo",
-      });
-    });
-    return scholarships.slice(1, -8);
-  });
-
   await browser.close();
-  return [...nuisScholarships, ...milgapoScholarships];
+  return [...milgapoScholarships, ...nuisScholarships];
 }
 
 module.exports = { scrapeScholarships };

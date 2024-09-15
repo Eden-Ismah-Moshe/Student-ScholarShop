@@ -1,3 +1,5 @@
+@import "./variables.css";
+
 .home-container {
   display: flex;
   flex-direction: column;
@@ -10,8 +12,8 @@
   justify-content: space-between; /* Space between logo and navigation */
   align-items: center; /* Center vertically */
   padding: 5px;
-  background-color: white;
-  color: black;
+  background-color: var(--headerColor);
+  color: var(--headerTextColor);
 }
 
 .header h2 {
@@ -31,7 +33,7 @@
 }
 
 .navbar ul li a {
-  color: black;
+  color: var(--linkColor);
   text-decoration: none;
   font-weight: bold;
 }
@@ -75,7 +77,7 @@
 
 .intro-section p {
   font-size: 1.2rem;
-  color: #666;
+  color: var(--paragraphColor);
   margin-bottom: 40px;
 }
 
@@ -86,8 +88,8 @@
 }
 
 .feature-button {
-  background-color: black;
-  color: white;
+  background-color: var(--buttonColor);
+  color: var(--buttonTextColor);
   padding: 15px 30px;
   font-size: 1rem;
   border: none;
@@ -97,13 +99,13 @@
 }
 
 .feature-button:hover {
-  background-color: #0056b3;
+  background-color: var(--buttonHoverColor);
 }
 
 /* Footer Section */
 .footer {
-  background-color: #333;
-  color: white;
+  background-color: var(--footerColor);
+  color: var(--footerTextColor);
   text-align: center;
   padding: 10px;
 }

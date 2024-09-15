@@ -16,12 +16,11 @@ exports.scrapeScholarships = async (req, res) => {
   }
 };
 
+// Get all the scholarships from the database
 exports.getAllScholarships = async (req, res) => {
   try {
     const scholarships = await Scholarships.find();
     res.json(scholarships);
-
-    console.log(scholarships);
   } catch (err) {
     res.status(500).json({ message: "Server Error" });
   }

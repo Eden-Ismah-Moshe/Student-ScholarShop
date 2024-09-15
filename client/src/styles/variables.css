@@ -1,0 +1,15 @@
+:root {
+  --headerColor: white;
+  --headerTextColor: black;
+  --titleColor: #333;
+  --paragraphColor: #666;
+  --linkColor: black;
+  --linkTextColor: white;
+  --buttonColor: black;
+  --buttonTextColor: white;
+  --buttonHoverColor: #0056b3;
+  --footerColor: #333;
+  --footerTextColor: white;
+
+  --cardBorderColor: #e0e0e0;
+}
