@@ -1,0 +1,53 @@
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  max-width: 500px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+input[type="text"] {
+  flex: 1;
+  margin-left: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  text-align: right;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: var(--buttonColor);
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--buttonColor);
+  color: var(--buttonTextColor);
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--buttonHoverColor);
+}
+
+button:active {
+  background-color: var(--buttonHoverColor);
+}
+
+button:disabled {
+  background-color: #ccc; /* Light gray background for disabled state */
+  color: #666;
+  cursor: not-allowed;
+  transition: none; /* Remove hover transition effect */
+}
