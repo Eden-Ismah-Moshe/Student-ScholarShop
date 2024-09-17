@@ -1,10 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import SearchBar from "../components/SearchBar";
 import HeroCarousel from "../components/HeroCarousel";
+import TrendingProductCard from "../components/TrendingProductCard";
 import "../styles/Ecommerce.css";
+import { getAllProducts } from "../services/ProductsAPI";
 
 const Ecommerce = () => {
+  const [trendingProducts, setTrendingProducts] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const data = await getAllProducts();
+        console.log("dataaaa: ", data.data);
+        setTrendingProducts(data.data);
+      } catch (err) {
+        setError("Failed to fetch Products");
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
   return (
     <div>
       {" "}
@@ -22,7 +41,16 @@ const Ecommerce = () => {
         </div>
       </section>
       <section>
-        <div className="section2-continer"> </div>
+        <div className="section2-continer">
+          {trendingProducts?.map((product) => (
+            <TrendingProductCard
+              key={product._id}
+              id={product._id}
+              image={product.image}
+              title={product.title}
+            />
+          ))}
+        </div>
       </section>
     </div>
   );

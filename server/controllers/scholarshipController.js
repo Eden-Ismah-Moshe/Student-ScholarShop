@@ -1,10 +1,10 @@
 const Scholarships = require("../models/Scholarship");
-const scrapeService = require("../services/scraperService");
+const scrapeScholarshipsService = require("../services/scrapeScholarships");
 
 // Scrape scholarships from the web and save to the database
 exports.scrapeScholarships = async (req, res) => {
   try {
-    const scholarships = await scrapeService.scrapeScholarships();
+    const scholarships = await scrapeScholarshipsService.scrapeScholarships();
 
     const savedScholarships = await Scholarships.insertMany(scholarships);
     res.status(201).json({
