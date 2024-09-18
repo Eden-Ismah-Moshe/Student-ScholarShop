@@ -2,22 +2,6 @@ import axios from "axios";
 import { API_BASE_URL } from "../constants";
 
 export const scrapeAmazonProduct = async (productUrl) => {
-  /* try {
-    const response = await fetch(`${API_BASE_URL}/products/scrape-product`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ productUrl }),
-    });
-
-    if (!response.ok) {
-      throw new Error("Failed to fetch product details");
-    }
-
-    const data = await response.json();
-    return data;
-*/
   try {
     const response = await axios.post(
       `${API_BASE_URL}/products/scrape-product`,

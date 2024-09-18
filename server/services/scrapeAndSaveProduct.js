@@ -113,14 +113,11 @@ const scrapeAndSaveProduct = async (productUrl) => {
     }
 
     const newProduct = await Product.findOneAndUpdate(
-      { productUrl: productData.productUrl },
-      product,
-      { upsert: true, new: true }
+      { productUrl: productData.productUrl }, // Find by productUrl
+      product, // New product data to update or insert
+      { upsert: true, new: true } // upsert: true - create if not found; new: true - return the updated document
     );
-    await newProduct.save();
-    console.log("Product saved to database:", newProduct);
-
-    //return productData;
+    //await newProduct.save();
     return newProduct;
   } catch (error) {
     console.error("Error scraping Amazon product:", error);

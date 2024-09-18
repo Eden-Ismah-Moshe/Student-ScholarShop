@@ -3,6 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const scholarshipsRoutes = require("./routes/scholarshipsRoutes");
 const productsRoutes = require("./routes/productsRoutes");
+const cronRoutes = require("./routes/cronRoutes");
 require("dotenv").config();
 
 const app = express();
@@ -21,6 +22,7 @@ mongoose
 
 app.use("/scholarships", scholarshipsRoutes); // Prefix the routes with '/scholarships'
 app.use("/products", productsRoutes); // Use product routes
+app.use("/cron", cronRoutes);
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {

@@ -51,10 +51,6 @@ const ProductDetails = () => {
                 {product.currentPrice}
               </p>
               <p>
-                <span className="price-label">Average Price: </span>$
-                {product.averagePrice}
-              </p>
-              <p>
                 <span className="price-label">Highest Price: </span>$
                 {product.highestPrice}
               </p>
