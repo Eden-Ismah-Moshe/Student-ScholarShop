@@ -96,8 +96,6 @@ const sendEmail = async (emailContent, sendTo) => {
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) return console.log(error);
-
-    console.log("Email sent: ", info);
   });
 };
 
