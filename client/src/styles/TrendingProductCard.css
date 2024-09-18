@@ -1,0 +1,21 @@
+.trending-card {
+  width: 220px; /* Set a fixed width for consistency */
+  text-align: center;
+  border: none;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.trending-card img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain; /* Ensures the image fits within the card without being distorted */
+}
+
+.trending-card h3 {
+  font-size: 1rem;
+  max-width: 200px; /* Match the image width */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Adds the "..." if the title is too long */
+}

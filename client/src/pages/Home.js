@@ -45,8 +45,8 @@ const Home = () => {
 
       <footer className="footer">
         <p>
-          Eden Ismah-Moshe &copy; {new Date().getFullYear()} Our Platform. All
-          rights reserved.
+          Eden Ismah-Moshe &copy; {new Date().getFullYear()}. All rights
+          reserved.
         </p>
       </footer>
     </div>

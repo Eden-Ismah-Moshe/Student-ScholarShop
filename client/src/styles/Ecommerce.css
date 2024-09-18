@@ -1,0 +1,27 @@
+.title {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+.section1-continer {
+}
+
+.search-continer {
+}
+
+.section2-continer {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal-width columns */
+  margin-left: 20px;
+  display: flex;
+  justify-items: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Allows products to wrap to the next line if the screen is smaller */
+  margin: 0 auto; /* Centers the whole grid in the section */
+  max-width: 1200px; /* Sets the maximum width of the grid container */
+}
