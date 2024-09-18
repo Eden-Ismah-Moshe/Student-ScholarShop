@@ -20,11 +20,11 @@ mongoose
     console.error("MongoDB connection error:", err);
   });
 
-app.use("/scholarships", scholarshipsRoutes); // Prefix the routes with '/scholarships'
-app.use("/products", productsRoutes); // Use product routes
+app.use("/scholarships", scholarshipsRoutes);
+app.use("/products", productsRoutes);
 app.use("/cron", cronRoutes);
 
-const PORT = process.env.PORT;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// Export the Express app as a serverless function
+module.exports = (req, res) => {
+  app(req, res);
+};
