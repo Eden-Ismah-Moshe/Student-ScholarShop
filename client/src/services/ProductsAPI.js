@@ -34,7 +34,6 @@ export const scrapeAmazonProduct = async (productUrl) => {
 };
 
 export const getProductById = async (productId) => {
-  console.log("getProductById", productId);
   try {
     const product = await axios.get(`${API_BASE_URL}/products/getProductById`, {
       params: { productId },
@@ -52,6 +51,18 @@ export const getAllProducts = async () => {
     return products;
   } catch (error) {
     console.error("Error getting all the products data:", error);
+    throw error;
+  }
+};
+
+export const addUserEmailToProduct = async (productId, userEmail) => {
+  try {
+    await axios.post(`${API_BASE_URL}/products/addUserEmailToProduct`, {
+      productId,
+      userEmail,
+    });
+  } catch (error) {
+    console.error("Error add user email to product:", error);
     throw error;
   }
 };

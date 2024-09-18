@@ -13,6 +13,8 @@ p {
 }
 
 .section2-continer {
+  position: relative;
+
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 equal-width columns */
   margin-left: 20px;

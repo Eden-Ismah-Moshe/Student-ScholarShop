@@ -14,7 +14,6 @@ const Ecommerce = () => {
     const fetchProducts = async () => {
       try {
         const data = await getAllProducts();
-        console.log("dataaaa: ", data.data);
         setTrendingProducts(data.data);
       } catch (err) {
         setError("Failed to fetch Products");

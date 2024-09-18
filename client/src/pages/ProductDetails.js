@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import { useLocation } from "react-router-dom";
 import "../styles/ProductDetails.css";
 import { getProductById } from "../services/ProductsAPI";
+import Modal from "../components/Modal";
 
 const ProductDetails = () => {
   const [product, setProduct] = useState(null);
@@ -62,7 +63,7 @@ const ProductDetails = () => {
                 {product.lowestPrice}
               </p>
             </div>
-            <button className="track-button">Track</button>
+            <Modal productId={product._id} />
           </div>
         </div>
       </div>{" "}

@@ -52,20 +52,6 @@ h1 {
   font-weight: bold;
 }
 
-.track-button {
-  background-color: #000;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-.track-button:hover {
-  background-color: #333;
-}
-
 h3 {
   font-size: 20px;
   margin-top: 30px;
@@ -92,4 +78,20 @@ h3 {
 
 .buy-now-button:hover {
   background-color: #333;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .product-container1 {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center; /* Center align items */
+  }
+
+  .product-info {
+    max-width: 100%;
+  }
+
+  .product-image img {
+    max-width: 100%;
+  }
 }
