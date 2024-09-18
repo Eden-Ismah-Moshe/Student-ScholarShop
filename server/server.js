@@ -12,7 +12,7 @@ app.use(cors());
 // Allow specific origin(s)
 app.use(
   cors({
-    origin: "https://student-scholar-shop.vercel.app/",
+    origin: "https://student-scholar-shop.vercel.app",
   })
 );
 app.use(express.json());
