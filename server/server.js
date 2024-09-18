@@ -25,14 +25,13 @@ app.use("/products", productsRoutes);
 app.use("/cron", cronRoutes);
 
 // Export the Express app as a serverless function
-
+/*
 module.exports = (req, res) => {
   app(req, res);
 };
+*/
 
-/*
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-*/

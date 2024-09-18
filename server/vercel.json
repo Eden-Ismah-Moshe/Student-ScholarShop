@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "*.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/scholarships/(.*)",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/products/(.*)",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/cron/(.*)",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/server.js"
+    }
+  ]
+}

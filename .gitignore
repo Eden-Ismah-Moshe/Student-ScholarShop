@@ -1,0 +1,14 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Log files
+*.log
+
+# Build output
+dist/
+
+# Optional: If you have a specific directory for your server
+/server/node_modules/
