@@ -125,21 +125,24 @@ const scrapeAndSaveProduct = async (productUrl) => {
   }
 };*/
 
-const chromium = require("chrome-aws-lambda");
 const Product = require("../models/Product");
+const puppeteer = require("puppeteer-core"); // or 'puppeteer'
 
 const scrapeAndSaveProduct = async (productUrl) => {
   if (!productUrl) return;
 
-  let browser;
-
   try {
-    // Use Chrome AWS Lambda executable
-    browser = await chromium.puppeteer.launch({
-      args: chromium.args,
-      defaultViewport: chromium.defaultViewport,
-      executablePath: await chromium.executablePath,
-      headless: chromium.headless,
+    const browser = await puppeteer.launch({
+      headless: true,
+      args: [
+        "--no-sandbox",
+        "--disable-setuid-sandbox",
+        "--disable-dev-shm-usage",
+        "--disable-accelerated-2d-canvas",
+        "--no-zygote",
+        "--single-process",
+        "--disable-gpu",
+      ],
     });
 
     const page = await browser.newPage();
